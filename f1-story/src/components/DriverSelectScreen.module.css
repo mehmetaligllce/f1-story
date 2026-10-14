@@ -1,0 +1,316 @@
+/* ─── PAGE ─────────────────────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  background: #0a0a0f;
+  color: #fff;
+  font-family: 'Inter', -apple-system, sans-serif;
+  padding-bottom: 120px; /* footer space */
+}
+
+/* ─── HERO ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 5rem 2rem 3.5rem;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(225,6,0,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroSub {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #e10600;
+  margin: 0 0 0.6rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 1rem;
+  line-height: 1.05;
+}
+
+.heroTitle span {
+  color: #e10600;
+}
+
+.heroDesc {
+  font-size: 1rem;
+  color: #8a8a9a;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── GRID ─────────────────────────────────────────────────── */
+.gridWrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+/* ─── CARD ─────────────────────────────────────────────────── */
+.card {
+  position: relative;
+  background: #111118;
+  border: 1px solid #1e1e2a;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition:
+    transform 0.25s cubic-bezier(0.34,1.56,0.64,1),
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--team-color-dim);
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--team-color);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 0 1px var(--team-color);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Selected state */
+.cardSelected {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--team-color) !important;
+  box-shadow: 0 0 0 2px var(--team-color), 0 20px 50px rgba(0,0,0,0.6) !important;
+}
+
+.cardSelected::before {
+  opacity: 1 !important;
+}
+
+/* Number watermark */
+.cardNumber {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.06);
+  letter-spacing: -1px;
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Selected tick */
+.tick {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 26px;
+  height: 26px;
+  background: var(--team-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #000;
+  z-index: 10;
+  animation: popIn 0.2s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Photo */
+.photoWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1a1a24 0%, #0e0e16 100%);
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .photo {
+  transform: scale(1.06);
+}
+
+/* Bottom team color bar */
+.photoWrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--team-color);
+}
+
+/* Info section */
+.cardInfo {
+  padding: 0.9rem 1rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.driverName {
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #f0f0f8;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.teamName {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.85;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ovrLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #555565;
+  letter-spacing: 1px;
+}
+
+.ovrValue {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.tierBadge {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 2px 6px;
+  border-radius: 20px;
+  border: 1px solid;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+/* ─── STICKY FOOTER ─────────────────────────────────────────── */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  border-top: 2px solid #1e1e2a;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.footerVisible {
+  transform: translateY(0);
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footerNum {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.footerName {
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footerTeam {
+  font-size: 0.72rem;
+  color: #6b6b7e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.startBtn {
+  background: linear-gradient(135deg, #e10600, #ff3a2e);
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 6px 24px rgba(225, 6, 0, 0.45);
+}
+
+.startBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 32px rgba(225, 6, 0, 0.65);
+}
+
+.startBtn:active {
+  transform: scale(0.97);
+}

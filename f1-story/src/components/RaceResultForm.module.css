@@ -1,0 +1,654 @@
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #111115;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Track Card Header */
+.trackCard {
+    background: linear-gradient(135deg, #1b1b24 0%, #14141a 100%);
+    border-radius: 16px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.seasonBadge {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #e10600;
+    background: rgba(225, 6, 0, 0.12);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.trackTitle {
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin: 0.3rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: linear-gradient(180deg, #ffffff 0%, #d0d0d8 100%);
+    -background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.trackSubtitle {
+    color: #9090a0;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.circuitBadges {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.chip {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: #cccccc;
+}
+
+.chip strong {
+    color: #ffffff;
+}
+
+/* Start Race Action Card */
+.actionCard {
+    text-align: center;
+    background: radial-gradient(circle at center, #221a22 0%, #15151e 100%);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    border: 2px dashed rgba(225, 6, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+.actionCard h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.actionCard p {
+    color: #9a9ab0;
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+    font-size: 0.95rem;
+}
+
+.startRaceBtn {
+    background: linear-gradient(135deg, #e10600 0%, #b30000 100%);
+    color: #ffffff;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 18px 42px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(225, 6, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.startRaceBtn:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(225, 6, 0, 0.6);
+}
+
+.loadingCard {
+    text-align: center;
+    background: radial-gradient(circle at center, #241c24 0%, #171520 100%);
+    padding: 3.5rem 2rem;
+    border-radius: 16px;
+    border: 2px solid rgba(225, 6, 0, 0.4);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(225, 6, 0, 0.15);
+}
+
+.loadingSpinner {
+    border: 4px solid rgba(225, 6, 0, 0.15);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-left-color: #e10600;
+    animation: spin 0.9s linear infinite;
+    margin-bottom: 1.5rem;
+}
+
+.loadingCard h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+}
+
+.loadingCard p {
+    color: #9090a5;
+    font-size: 0.95rem;
+    margin: 0;
+    max-width: 460px;
+}
+
+/* News Status Banner */
+.newsBanner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.4s ease;
+}
+
+.newsBanner.generating {
+    background: rgba(225, 6, 0, 0.12);
+    border: 1px solid rgba(225, 6, 0, 0.3);
+    color: #ff6b66;
+}
+
+.newsBanner.done {
+    background: rgba(46, 204, 113, 0.12);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    color: #2ecc71;
+}
+
+.newsBanner.error {
+    background: rgba(241, 196, 15, 0.12);
+    border: 1px solid rgba(241, 196, 15, 0.3);
+    color: #f1c40f;
+}
+
+.pulseDot {
+    width: 10px;
+    height: 10px;
+    background: #e10600;
+    border-radius: 50%;
+    animation: pulse 1.2s infinite;
+}
+
+/* Podium Layout */
+.resultsSection {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.8rem;
+}
+
+.sectionHeader h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.liveTag {
+    background: #e10600;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.podiumContainer {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1fr;
+    gap: 16px;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+}
+
+.podiumCard {
+    background: #181822;
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.podiumCard:hover {
+    transform: translateY(-5px);
+}
+
+.goldPodium {
+    border: 2px solid #ffd700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+    background: linear-gradient(180deg, #242217 0%, #16151e 100%);
+    order: 2;
+    padding-top: 2rem;
+}
+
+.silverPodium {
+    border: 2px solid #c0c0c0;
+    box-shadow: 0 8px 24px rgba(192, 192, 192, 0.15);
+    order: 1;
+}
+
+.bronzePodium {
+    border: 2px solid #cd7f32;
+    box-shadow: 0 8px 24px rgba(205, 127, 50, 0.15);
+    order: 3;
+}
+
+.winnerCrown {
+    position: absolute;
+    top: -14px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+    color: #000;
+    font-weight: 900;
+    font-size: 0.75rem;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.podiumBadge {
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.goldPodium .podiumBadge { color: #ffd700; }
+.silverPodium .podiumBadge { color: #c0c0c0; }
+.bronzePodium .podiumBadge { color: #cd7f32; }
+
+.podiumAvatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem auto;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    background: #111;
+}
+
+.goldPodium .podiumAvatar {
+    width: 120px;
+    height: 120px;
+    border-color: #ffd700;
+}
+
+.podiumDriverImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.podiumDriverName {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0 0 0.4rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.podiumTeamRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: #a0a0b0;
+    margin-bottom: 1rem;
+}
+
+.teamLogoImg {
+    object-fit: contain;
+}
+
+.podiumScoreRow {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ptsBadge {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.goldPts {
+    background: #ffd700;
+    color: #000000;
+}
+
+.scorePill {
+    font-size: 0.78rem;
+    color: #888899;
+}
+
+/* Grid List (P4 to P22) */
+.gridList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 2.5rem;
+}
+
+.gridListHeader {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px;
+    padding: 10px 16px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #707080;
+    letter-spacing: 1px;
+}
+
+.gridRow {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px;
+    align-items: center;
+    background: #181822;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-left: 4px solid #2a2a38;
+    transition: all 0.2s ease;
+}
+
+.gridRow:hover {
+    background: #20202d;
+    border-left-color: #e10600;
+    transform: translateX(3px);
+}
+
+.pointsPosition {
+    border-left-color: #e10600;
+}
+
+.posBadge {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #aaaaee;
+}
+
+.pos1 { color: #ffd700; }
+.pos2 { color: #c0c0c0; }
+.pos3 { color: #cd7f32; }
+
+.driverInfoCell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rowAvatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #0d0d12;
+    flex-shrink: 0;
+}
+
+.rowDriverImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.driverText {
+    display: flex;
+    flex-direction: column;
+}
+
+.rowDriverName {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.rowDriverName small {
+    color: #e10600;
+    font-weight: 800;
+    margin-left: 4px;
+}
+
+.rowTeamName {
+    font-size: 0.8rem;
+    color: #888899;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.miniTeamLogo {
+    object-fit: contain;
+}
+
+.scoreMetricsCell {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.metricBadge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    color: #bbbbcc;
+}
+
+.pointsCell {
+    text-align: right;
+}
+
+.f1PtsBadge {
+    background: rgba(225, 6, 0, 0.15);
+    color: #ff4d4d;
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.noPts {
+    color: #555566;
+    font-weight: 600;
+}
+
+/* Bottom Actions */
+.bottomActions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.primaryNavBtn {
+    background: #e10600;
+    color: #ffffff;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 20px rgba(225, 6, 0, 0.3);
+}
+
+.primaryNavBtn:hover {
+    background: #ff0800;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(225, 6, 0, 0.5);
+}
+
+/* Secondary Manual Entry */
+.manualToggleContainer {
+    margin-top: 3rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.toggleManualBtn {
+    background: transparent;
+    color: #888899;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggleManualBtn:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.manualForm {
+    margin-top: 1.5rem;
+    background: #181822;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.manualForm h3 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+
+.manualList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.manualRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.manualPos {
+    font-weight: 800;
+    color: #e10600;
+    width: 35px;
+}
+
+.selectWrapper {
+    flex: 1;
+}
+
+.select {
+    width: 100%;
+    padding: 10px 14px;
+    background: #252533;
+    border: 1px solid #333345;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.select:focus {
+    border-color: #e10600;
+    outline: none;
+}
+
+.selectedDriverPreview {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.miniDriverImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.manualSubmitBtn {
+    background: #e10600;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .podiumContainer {
+        grid-template-columns: 1fr;
+    }
+    .goldPodium { order: 1; }
+    .silverPodium { order: 2; }
+    .bronzePodium { order: 3; }
+    .gridRow, .gridListHeader {
+        grid-template-columns: 45px 1fr 70px;
+    }
+    .scoreMetricsCell {
+        display: none;
+    }
+}
+
+

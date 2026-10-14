@@ -1,0 +1,187 @@
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #111115; 
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    border-bottom: 4px solid #e10600; 
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.driverRow {
+    display: flex;
+    align-items: center;
+    background: #1b1b22;
+    padding: 12px 20px;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    border-left: 5px solid transparent;
+    text-decoration: none; /* Link styles reset */
+    color: inherit;
+}
+
+.driverRow:hover {
+    transform: translateX(8px);
+    background: #23232c;
+    border-left: 5px solid #e10600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.driverRow:nth-child(1) {
+    border-left-color: #ffd700;
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.08) 0%, #1b1b22 100%);
+}
+.driverRow:nth-child(2) {
+    border-left-color: #c0c0c0;
+}
+.driverRow:nth-child(3) {
+    border-left-color: #cd7f32;
+}
+
+.position {
+    font-size: 1.5rem;
+    font-weight: 800;
+    width: 45px;
+    text-align: center;
+    color: #e1e1e1;
+    margin-right: 15px;
+}
+
+.driverRow:nth-child(1) .position { color: #ffd700; }
+.driverRow:nth-child(2) .position { color: #c0c0c0; }
+.driverRow:nth-child(3) .position { color: #cd7f32; }
+
+.driverInfo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 12px;
+}
+
+.countryFlag {
+    width: 36px !important;
+    height: 26px !important;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+}
+
+/* New Image Styles */
+.imageWrapper {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px; /* Slightly rounded corners instead of circle */
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    align-items: flex-end; /* Align portraits to the bottom */
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.driverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.nameTeam {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nameWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.driverName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.driverNumber {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #e10600;
+    background: rgba(225, 6, 0, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.teamName {
+    font-size: 0.85rem;
+    color: #a0a0b0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.rightContent {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pointsWrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    background: #e10600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    min-width: 90px;
+    justify-content: center;
+}
+
+.points {
+    font-size: 1.3rem;
+    font-weight: 800;
+    
+}
+
+.ptsLabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.Button{
+   background: #e10600;
+   padding: 12px 24px;
+   border-radius: 8px;
+   font-size: 1.2rem;
+   font-weight: 600;
+   color: #fff;
+   border: none;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.Button:hover{
+    background: #c00000;
+    transform: translateY(-2px);
+}

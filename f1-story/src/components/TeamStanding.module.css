@@ -1,0 +1,132 @@
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #111115; 
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    border-bottom: 4px solid #e10600; 
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.teamRow {
+    display: flex;
+    align-items: center;
+    background: #1b1b22;
+    padding: 12px 20px;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    border-left: 5px solid transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.teamRow:hover {
+    transform: translateX(8px);
+    background: #23232c;
+    border-left: 5px solid #e10600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.teamRow:nth-child(1) {
+    border-left-color: #ffd700;
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.08) 0%, #1b1b22 100%);
+}
+.teamRow:nth-child(2) {
+    border-left-color: #c0c0c0;
+}
+.teamRow:nth-child(3) {
+    border-left-color: #cd7f32;
+}
+
+.position {
+    font-size: 1.5rem;
+    font-weight: 800;
+    width: 45px;
+    text-align: center;
+    color: #e1e1e1;
+    margin-right: 15px;
+}
+
+.teamRow:nth-child(1) .position { color: #ffd700; }
+.teamRow:nth-child(2) .position { color: #c0c0c0; }
+.teamRow:nth-child(3) .position { color: #cd7f32; }
+
+.teamInfo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 12px;
+}
+
+.nameWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.teamName {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.rightContent {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.imageWrapper {
+    width: 150px;
+    height: 50px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.teamImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.pointsWrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    background: #e10600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    min-width: 90px;
+    justify-content: center;
+}
+
+.points {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.ptsLabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.9;
+}

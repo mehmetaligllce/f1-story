@@ -1,0 +1,178 @@
+[
+  {
+    "name": "Mercedes-AMG Petronas F1 Team",
+    "image": "/images/teams/mercedesLogo.webp",
+    "background" : "/images/events/mercedes_event.jpg",
+    "points": 443,
+    "rating": {
+      "pace": 97,
+      "reliability": 93,
+      "development": 90,
+      "morale": 95,
+      "downforce": 94,
+      "power_unit": 96,
+      "tyre_management": 91,
+      "strategy": 95
+    }
+  },
+  {
+    "name": "Scuderia Ferrari HP",
+    "image": "/images/teams/ferrariLogo.webp",
+    "background" : "/images/events/ferrari_event.jpg",
+    "points": 338,
+    "rating": {
+      "pace": 91,
+      "reliability": 88,
+      "development": 87,
+      "morale": 89,
+      "downforce": 96,
+      "power_unit": 85,
+      "tyre_management": 92,
+      "strategy": 88
+    }
+  },
+  {
+    "name": "McLaren Mastercard F1 Team",
+    "image": "/images/teams/mclarenLogo.webp",
+    "background" : "/images/events/mclaren_event.jpg",
+    "points": 269,
+    "rating": {
+      "pace": 92,
+      "reliability": 86,
+      "development": 96,
+      "morale": 92,
+      "downforce": 94,
+      "power_unit": 96,
+      "tyre_management": 88,
+      "strategy": 85
+    }
+  },
+  {
+    "name": "Oracle Red Bull Racing",
+    "image": "/images/teams/redbullLogo.webp",
+    "background" : "/images/events/redbull_event.jpg",
+    "points": 224,
+    "rating": {
+      "pace": 90,
+      "reliability": 88,
+      "development": 89,
+      "morale": 85,
+      "downforce": 82,
+      "power_unit": 95,
+      "tyre_management": 80,
+      "strategy": 97
+    }
+  },
+  {
+    "name": "Visa Cash App Racing Bulls F1 Team",
+    "image": "/images/teams/racingbullsLogo.webp",
+    "background" : "/images/events/racingbulls_event.jpg",
+    "points": 74,
+    "rating": {
+      "pace": 76,
+      "reliability": 83,
+      "development": 76,
+      "morale": 83,
+      "downforce": 73,
+      "power_unit": 93,
+      "tyre_management": 76,
+      "strategy": 79
+    }
+  },
+  {
+    "name": "BWT Alpine F1 Team",
+    "image": "/images/teams/alpineLogo.webp",
+    "background" : "/images/events/alpine_event.jpg",
+    "points": 67,
+    "rating": {
+      "pace": 77,
+      "reliability": 81,
+      "development": 79,
+      "morale": 84,
+      "downforce": 76,
+      "power_unit": 96,
+      "tyre_management": 77,
+      "strategy": 80
+    }
+  },
+  {
+    "name": "TGR Haas F1 Team",
+    "image": "/images/teams/haasLogo.webp",
+    "background" : "/images/events/haas_event.jpg",
+    "points": 20,
+    "rating": {
+      "pace": 80,
+      "reliability": 83,
+      "development": 77,
+      "morale": 82,
+      "downforce": 79,
+      "power_unit": 85,
+      "tyre_management": 81,
+      "strategy": 78
+    }
+  },
+  {
+    "name": "Audi Revolut F1 Team",
+    "image": "/images/teams/audiLogo.webp",
+    "background" : "/images/events/audi_event.jpg",
+    "points": 17,
+    "rating": {
+      "pace": 73,
+      "reliability": 82,
+      "development": 86,
+      "morale": 81,
+      "downforce": 74,
+      "power_unit": 75,
+      "tyre_management": 76,
+      "strategy": 78
+    }
+  },
+  {
+    "name": "Atlassian Williams F1 Team",
+    "image": "/images/teams/williamsLogo.webp",
+    "background" : "/images/events/williams_event.jpg",
+    "points": 11,
+    "rating": {
+      "pace": 73,
+      "reliability": 77,
+      "development": 81,
+      "morale": 76,
+      "downforce": 70,
+      "power_unit": 96,
+      "tyre_management": 75,
+      "strategy": 79
+    }
+  },
+  {
+    "name": "Aston Martin Aramco F1 Team",
+    "image": "/images/teams/astonmartinLogo.webp",
+    "background" : "/images/events/astonmartin_event.jpg",
+    "points": 3,
+    "rating": {
+      "pace": 67,
+      "reliability": 63,
+      "development": 91,
+      "morale": 62,
+      "downforce": 70,
+      "power_unit": 68,
+      "tyre_management": 71,
+      "strategy": 73
+    }
+  },
+  {
+    "name": "Cadillac Formula 1 Team",
+    "image": "/images/teams/cadillacLogo.webp",
+    "background" : "/images/events/cadillac_event.jpg",
+    "points": 0,
+    "rating": {
+      "pace": 63,
+      "reliability": 75,
+      "development": 76,
+      "morale": 86,
+      "downforce": 67,
+      "power_unit": 85,
+      "tyre_management": 72,
+      "strategy": 72
+    }
+  }
+]

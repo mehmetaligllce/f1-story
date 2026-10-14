@@ -1,0 +1,351 @@
+[
+    {
+        "id":"opponent_overtake",
+        "question":"Rakip {{driver_front}} {{attack_site}} seni geçti ",
+        "lap":[0,-1],
+        "position":[1,22],
+        "options": [
+            {
+                "id": "attack",
+                "icon":"",
+                "label": "Hemen Karşı Atak ",
+                "description":""
+            },
+            {
+                "id": "wait",
+                "icon":"",
+                "label": "1 tur arkasında kal ve ekstra güçle sonraki tur atak yap",
+                "description":""
+            },
+            {
+                "id": "give",
+                "icon":"",
+                "label": "Bizim Yarışımız Başka zorlama",
+                "description":""
+            }
+        ]
+    },
+    {
+        "id":"safety_car",
+        "question":"{{lap_number}} turda {{rival_group}} grupta kaza, piste  Güvenlik Aracı (SC) girdi. Pit pencerenizin açılmasına {{remain_pit}} tur var ({{tire_type}} lastiktesin) ",
+        "lap":[16,30],
+        "position":[1,22],
+        "options": [
+            {
+                "id": "box",
+                "icon":"",
+                "label": "Hemen pite gir , stratejiye devam",
+                "description":""
+            },
+            {
+                "id": "stay_out",
+                "icon":"",
+                "label": "Piste Kal ve Pozisyonu Koru",
+                "description":""
+            },
+            {
+                "id": "aggresive_box",
+                "icon":"",
+                "label": "Agresif Çift Hamur",
+                "description":""
+            }
+        ]
+    },
+
+    {
+        "id":"strategy_call",
+        "question":"Önündeki pilot {{driver_front}} pite girdi. Fark {{gap_time}} saniyeydi. ",
+        "lap":[18,38],
+        "position":[2,22],
+        "options": [
+            {
+                "id": "undercut",
+                "icon":"",
+                "label": "Sonraki tur hemen pite gir",
+                "description":""
+            },
+            {
+                "id": "overcut",
+                "icon":"",
+                "label": "2-3 tur pistte kalıp hızlı turlar at",
+                "description":""
+            },
+            {
+                "id": "extend",
+                "icon":"",
+                "label": "Stinti uzat",
+                "description":""
+            }
+        ]
+    },
+
+    {
+        "id":"rain_call",
+        "question":"3. sektörde çiseleyen yağmur başladı, pist yüzeyi yer yer parlamaya başladı ancak ana yarış çizgisi henüz kuru. ",
+        "lap":[5,-10],
+        "position":[0,22],
+        "options": [
+            {
+                "id": "box",
+                "icon":"",
+                "label": "Erken intermediate pit",
+                "description":""
+            },
+            {
+                "id": "stay_out",
+                "icon":"",
+                "label": "Pite girme kuru lastiklerle bekle",
+                "description":""
+            },
+            {
+                "id": "wait",
+                "icon":"",
+                "label": "Öndekilere göre karar ver",
+                "description":""
+            }
+        ]
+    },
+    {
+        "id":"ers_manage",
+        "lap":[8,-1],
+        "position":[1,21],
+        "question":"{{driver_behind}} son 3 turda hava koridorunda ve 0.4 saniyeye kadar yaklaştı.",
+        "options": [
+            {
+                "id": "use_ers",
+                "icon":"",
+                "label": "Viraj çıkışında bataryanın %35-40'ını tek bir ana düzlükte savunma için harcama",
+                "description":""
+            },
+            {
+                "id": "deffensive_line",
+                "icon":"",
+                "label": "Çekişi feda edip iç çizgiyi savunarak viraj girişinde rakibin burnunu sokmasını engelleme",
+                "description":""
+            },
+            {
+                "id": "give",
+                "icon":"",
+                "label": "Bizim Yarışımız Başka Savunurken zaman kaybetmeyip rakibe agresif savunma",
+                "description":""
+            }
+        ]
+    },
+
+    {
+        "id":"tyre_warm",
+        "question":"{{position}}'desin ve arkandaki {{driver_behind}} {{gap_time}} saniye arkanda. Direksiyon ekranında sol ön fren sıcaklığı kırmızı alarm veriyor",
+        "lap":[35,-1],
+        "position":[1,21],
+        "options": [
+            {
+                "id": "risk",
+                "icon":"",
+                "label": "Uyarıyı Yoksay, Pozisyonu Koru",
+                "description":""
+            },
+            {
+                "id": "lift_cost",
+                "icon":"",
+                "label": "Lift & Coast yap",
+                "description":""
+            },
+            {
+                "id": "tire_bias",
+                "icon":"",
+                "label": "Fren Dengesini (Brake Bias) Arkaya Kaydır",
+                "description":""
+            }
+        ]
+    }, 
+
+    {
+        "id":"team_war",
+        "question":"Takım arkadaşının 0.5 saniye arkasındasın. Sen daha hızlısın, ama takım henüz net bir emir vermedi. Arkadan {{driver_behind}}  hızla yaklaşıyor.",
+        "lap":[10,-1],
+        "position":[2,21],
+        "options": [
+            {
+                "id": "radio",
+                "icon":"",
+                "label": "Telsizden Talep Et",
+                "description":""
+            },
+            {
+                "id": "attack",
+                "icon":"",
+                "label": "Beklemeden Agresif Atak Yap",
+                "description":""
+            },
+            {
+                "id": "defense",
+                "icon":"",
+                "label": "{{driver_behind}} Tehdidine Karşı Takım Savunması Yap",
+                "description":""
+            }
+        ]
+    },
+     
+    {
+        "id":"box_time",
+        "lap":[18,-18],
+        "position":[1,22],
+        "question":"Pit penceren geldi ",
+        "options": [
+            {
+                "id": "main_strategy",
+                "icon":"",
+                "label": "Ana stratejiye sadık kal",
+                "description":""
+            },
+            {
+                "id": "stay_out",
+                "icon":"",
+                "label": "Pistte kal sc ,vsc bekle",
+                "description":""
+            },
+            {
+                "id": "alternative_strategy",
+                "icon":"",
+                "label": "agresif stratejiye dön risk al",
+                "description":""
+            }
+        ]
+    },
+     
+    {
+        "id":"white_black_flag",
+        "question":"Yarış bitimine 12 tur var siyah beyaz bayrak uyarısı aldın bir kez daha pist sınırlarını aşarsan ceza alacaksın ",
+        "lap":[-12,-12],
+        "position":[1,22],
+        "options": [
+            {
+                "id": "safe_drive",
+                "icon":"",
+                "label": "Çizgiyi Daralt, Kerblerden Uzak Dur",
+                "description":""
+            },
+            {
+                "id": "risk",
+                "icon":"",
+                "label": "Limitte Sürüşe Devam Et (Kumar)",
+                "description":""
+            },
+            {
+                "id": "safe_power",
+                "icon":"",
+                "label": "Motor modunu değiştirerek fazla zorlama virajlarda",
+                "description":""
+            }
+        ]
+    },
+
+    {
+        "id":"damage",
+        "question":"{{damage_site}} viraj temasında ön kanadının sağ uç plakası (endplate) koptu. Araç şiddetli önden kayma (understeer) yaşıyor. Önünde {{remain_lap}} tur var. ",
+        "lap":[1,-10],
+        "position":[1,22],
+        "options": [
+            {
+                "id": "box",
+                "icon":"",
+                "label": "Burun Değişimi İçin Pite Gel",
+                "description":""
+            },
+            {
+                "id": "manage_settings",
+                "icon":"",
+                "label": "Aracı Ayarlarla Dengele ve Pistte Kal",
+                "description":""
+            },
+            {
+                "id": "slipstream",
+                "icon":"",
+                "label": "Öndeki Aracın arkasında kal",
+                "description":""
+            }
+        ]
+    },    
+
+    {
+        "id":"restart",
+        "question":"Yarışın bitimine {{remain_lap}} tur kaldı restart formasyon turundasın ve rakibinin taze softları var sen taze mediumdasın ",
+        "lap":[40,-6],
+        "position":[1,10],
+        "options": [
+            {
+                "id": "warm_up",
+                "icon":"",
+                "label": "Lastikleri Aşırı Isıt",
+                "description":""
+            },
+            {
+                "id": "safe",
+                "icon":"",
+                "label": "Kalkışta Güvenli Kal, sonraki turlara hazırlan",
+                "description":""
+            },
+            {
+                "id": "defense",
+                "icon":"",
+                "label": "Arkadaki Tehdide Karşı  Savunması Yap",
+                "description":""
+            }
+        ]
+    },
+
+    {
+        "id":"blue_flag",
+        "question":"{{position}}'desin, arkandaki {{driver_behind}} ile farkın {{gap_time}} saniye. Önünde kendi arasında 14. sıra için ölümüne savaşan iki {{oppenent_car}}var. Mavi bayrak sallanıyor ama birbirlerini bırakmadıkları için sana yol vermiyorlar.",
+        "lap":[30,-6],
+        "position":[1,3],
+        "options": [
+            {
+                "id": "straight",
+                "icon":"",
+                "label": "Sabırla Düzlüğü Bekle",
+                "description":""
+            },
+            {
+                "id": "dive_bomb",
+                "icon":"",
+                "label": "Araya burnunu sok",
+                "description":""
+            },
+            {
+                "id": "radio",
+                "icon":"",
+                "label": "Telsizden Hakemlere Baskı Kurdur",
+                "description":""
+            }
+        ]
+    },
+      
+    {
+        "id":"low_fuel",
+        "question":"Yarış boyunca öndekini kovalamak için yüksek motor modunda gittin. Son {{remain_lap}} tur kala direksiyonda yakıt deltası eksiye düştü. Finişi görmek için tur başına 120 gram yakıt kurtarman gerek. ",
+        "lap":[35,-10],
+        "position":[2,15],
+        "options": [
+            {
+                "id": "lift_cost",
+                "icon":"",
+                "label": "Aşırı 'Lift & Coast'",
+                "description":""
+            },
+            {
+                "id": "gear_shift",
+                "icon":"",
+                "label": "Kısa Vites Değişimi",
+                "description":""
+            },
+            {
+                "id": "slipstream",
+                "icon":"",
+                "label": "Önündekinin Hava Koridoruna sığın '",
+                "description":""
+            }
+        ]
+    }
+
+]

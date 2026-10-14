@@ -1,0 +1,420 @@
+[
+  {
+    "name": "Pierre Gasly",
+    "number": 10,
+    "team": "BWT Alpine F1 Team",
+    "country": "FR",
+    "image": "/images/drivers/pierre-gasly.webp",
+    "points": 41,
+    "rating": {
+      "pace": 86,
+      "racecraft": 87,
+      "aggression": 84,
+      "coldblood": 85,
+      "media_skill": 84,
+      "qualifying": 86,
+      "tyre_management": 85,
+      "wet_skill": 86,
+      "consistency": 86
+    }
+  },
+  {
+    "name": "Franco Colapinto",
+    "number": 43,
+    "team": "BWT Alpine F1 Team",
+    "country": "AR",
+    "image": "/images/drivers/franco-colapinto.webp",
+    "points": 26,
+    "rating": {
+      "pace": 85,
+      "racecraft": 85,
+      "aggression": 88,
+      "coldblood": 83,
+      "media_skill": 86,
+      "qualifying": 85,
+      "tyre_management": 81,
+      "wet_skill": 81,
+      "consistency": 82
+    }
+  },
+  {
+    "name": "Thomas Luca McBride",
+    "number": 21,
+    "team": "Aston Martin Aramco F1 Team",
+    "country": "IE",
+    "image": "/images/drivers/thomas-luca-mcbride.webp",
+    "points": 2,
+    "rating": {
+      "pace": 88,
+      "racecraft": 85,
+      "aggression": 95,
+      "coldblood": 77,
+      "media_skill": 80,
+      "qualifying": 89,
+      "tyre_management": 78,
+      "wet_skill": 87,
+      "consistency": 78
+    }
+  },
+  {
+    "name": "Lance Stroll",
+    "number": 18,
+    "team": "Aston Martin Aramco F1 Team",
+    "country": "CA",
+    "image": "/images/drivers/lance-stroll.webp",
+    "points": 1,
+    "rating": {
+      "pace": 79,
+      "racecraft": 80,
+      "aggression": 84,
+      "coldblood": 74,
+      "media_skill": 72,
+      "qualifying": 76,
+      "tyre_management": 80,
+      "wet_skill": 86,
+      "consistency": 77
+    }
+  },
+  {
+    "name": "Nico Hülkenberg",
+    "number": 27,
+    "team": "Audi Revolut F1 Team",
+    "country": "DE",
+    "image": "/images/drivers/nico-hulkenberg.webp",
+    "points": 12,
+    "rating": {
+      "pace": 86,
+      "racecraft": 86,
+      "aggression": 81,
+      "coldblood": 86,
+      "media_skill": 85,
+      "qualifying": 89,
+      "tyre_management": 84,
+      "wet_skill": 85,
+      "consistency": 87
+    }
+  },
+  {
+    "name": "Gabriel Bortoleto",
+    "number": 5,
+    "team": "Audi Revolut F1 Team",
+    "country": "BR",
+    "image": "/images/drivers/gabriel-bortoleto.webp",
+    "points": 5,
+    "rating": {
+      "pace": 83,
+      "racecraft": 82,
+      "aggression": 82,
+      "coldblood": 81,
+      "media_skill": 80,
+      "qualifying": 84,
+      "tyre_management": 81,
+      "wet_skill": 80,
+      "consistency": 81
+    }
+  },
+  {
+    "name": "Valtteri Bottas",
+    "number": 77,
+    "team": "Cadillac Formula 1 Team",
+    "country": "FI",
+    "image": "/images/drivers/valtteri-bottas.webp",
+    "points": 0,
+    "rating": {
+      "pace": 83,
+      "racecraft": 83,
+      "aggression": 75,
+      "coldblood": 86,
+      "media_skill": 91,
+      "qualifying": 85,
+      "tyre_management": 84,
+      "wet_skill": 81,
+      "consistency": 85
+    }
+  },
+  {
+    "name": "Sergio Perez",
+    "number": 11,
+    "team": "Cadillac Formula 1 Team",
+    "country": "MX",
+    "image": "/images/drivers/sergio-perez.webp",
+    "points": 0,
+    "rating": {
+      "pace": 81,
+      "racecraft": 84,
+      "aggression": 82,
+      "coldblood": 80,
+      "media_skill": 84,
+      "qualifying": 77,
+      "tyre_management": 87,
+      "wet_skill": 81,
+      "consistency": 79
+    }
+  },
+  {
+    "name": "Lewis Hamilton",
+    "number": 44,
+    "team": "Scuderia Ferrari HP",
+    "country": "GB",
+    "image": "/images/drivers/lewis-hamilton.webp",
+    "points": 156,
+    "rating": {
+      "pace": 93,
+      "racecraft": 96,
+      "aggression": 84,
+      "coldblood": 95,
+      "media_skill": 98,
+      "qualifying": 90,
+      "tyre_management": 95,
+      "wet_skill": 96,
+      "consistency": 92
+    }
+  },
+  {
+    "name": "Charles Leclerc",
+    "number": 16,
+    "team": "Scuderia Ferrari HP",
+    "country": "MC",
+    "image": "/images/drivers/charles-leclerc.webp",
+    "points": 182,
+    "rating": {
+      "pace": 95,
+      "racecraft": 93,
+      "aggression": 88,
+      "coldblood": 89,
+      "media_skill": 90,
+      "qualifying": 97,
+      "tyre_management": 91,
+      "wet_skill": 89,
+      "consistency": 91
+    }
+  },
+  {
+    "name": "Esteban Ocon",
+    "number": 31,
+    "team": "TGR Haas F1 Team",
+    "country": "FR",
+    "image": "/images/drivers/esteban-ocon.webp",
+    "points": 13,
+    "rating": {
+      "pace": 85,
+      "racecraft": 87,
+      "aggression": 88,
+      "coldblood": 82,
+      "media_skill": 79,
+      "qualifying": 86,
+      "tyre_management": 85,
+      "wet_skill": 86,
+      "consistency": 85
+    }
+  },
+  {
+    "name": "Oliver Bearman",
+    "number": 87,
+    "team": "TGR Haas F1 Team",
+    "country": "GB",
+    "image": "/images/drivers/oliver-bearman.webp",
+    "points": 7,
+    "rating": {
+      "pace": 84,
+      "racecraft": 84,
+      "aggression": 84,
+      "coldblood": 85,
+      "media_skill": 83,
+      "qualifying": 85,
+      "tyre_management": 82,
+      "wet_skill": 84,
+      "consistency": 83
+    }
+  },
+  {
+    "name": "Lando Norris",
+    "number": 1,
+    "team": "McLaren Mastercard F1 Team",
+    "country": "GB",
+    "image": "/images/drivers/lando-norris.webp",
+    "points": 147,
+    "rating": {
+      "pace": 95,
+      "racecraft": 91,
+      "aggression": 85,
+      "coldblood": 84,
+      "media_skill": 93,
+      "qualifying": 96,
+      "tyre_management": 92,
+      "wet_skill": 91,
+      "consistency": 90
+    }
+  },
+  {
+    "name": "Oscar Piastri",
+    "number": 81,
+    "team": "McLaren Mastercard F1 Team",
+    "country": "AU",
+    "image": "/images/drivers/oscar-piastri.webp",
+    "points": 122,
+    "rating": {
+      "pace": 93,
+      "racecraft": 94,
+      "aggression": 86,
+      "coldblood": 97,
+      "media_skill": 88,
+      "qualifying": 92,
+      "tyre_management": 89,
+      "wet_skill": 89,
+      "consistency": 93
+    }
+  },
+  {
+    "name": "George Russell",
+    "number": 63,
+    "team": "Mercedes-AMG Petronas F1 Team",
+    "country": "GB",
+    "image": "/images/drivers/george-russell.webp",
+    "points": 251,
+    "rating": {
+      "pace": 93,
+      "racecraft": 92,
+      "aggression": 88,
+      "coldblood": 91,
+      "media_skill": 92,
+      "qualifying": 95,
+      "tyre_management": 90,
+      "wet_skill": 92,
+      "consistency": 93
+    }
+  },
+  {
+    "name": "Andrea Kimi Antonelli",
+    "number": 12,
+    "team": "Mercedes-AMG Petronas F1 Team",
+    "country": "IT",
+    "image": "/images/drivers/andrea-kimi-antonelli.webp",
+    "points": 192,
+    "rating": {
+      "pace": 94,
+      "racecraft": 86,
+      "aggression": 92,
+      "coldblood": 82,
+      "media_skill": 84,
+      "qualifying": 94,
+      "tyre_management": 83,
+      "wet_skill": 87,
+      "consistency": 82
+    }
+  },
+  {
+    "name": "Liam Lawson",
+    "number": 30,
+    "team": "Visa Cash App Racing Bulls F1 Team",
+    "country": "NZ",
+    "image": "/images/drivers/liam-lawson.webp",
+    "points": 46,
+    "rating": {
+      "pace": 86,
+      "racecraft": 87,
+      "aggression": 88,
+      "coldblood": 85,
+      "media_skill": 82,
+      "qualifying": 85,
+      "tyre_management": 84,
+      "wet_skill": 85,
+      "consistency": 86
+    }
+  },
+  {
+    "name": "Arvid Lindblad",
+    "number": 41,
+    "team": "Visa Cash App Racing Bulls F1 Team",
+    "country": "GB",
+    "image": "/images/drivers/arvid-lindblad.webp",
+    "points": 28,
+    "rating": {
+      "pace": 84,
+      "racecraft": 81,
+      "aggression": 91,
+      "coldblood": 78,
+      "media_skill": 78,
+      "qualifying": 86,
+      "tyre_management": 79,
+      "wet_skill": 82,
+      "consistency": 80
+    }
+  },
+  {
+    "name": "Max Verstappen",
+    "number": 3,
+    "team": "Oracle Red Bull Racing",
+    "country": "NL",
+    "image": "/images/drivers/max-verstappen.webp",
+    "points": 194,
+    "rating": {
+      "pace": 99,
+      "racecraft": 97,
+      "aggression": 96,
+      "coldblood": 95,
+      "media_skill": 83,
+      "qualifying": 99,
+      "tyre_management": 95,
+      "wet_skill": 99,
+      "consistency": 98
+    }
+  },
+  {
+    "name": "Isack Hadjar",
+    "number": 6,
+    "team": "Oracle Red Bull Racing",
+    "country": "FR",
+    "image": "/images/drivers/isack-hadjar.webp",
+    "points": 30,
+    "rating": {
+      "pace": 83,
+      "racecraft": 81,
+      "aggression": 89,
+      "coldblood": 76,
+      "media_skill": 76,
+      "qualifying": 85,
+      "tyre_management": 78,
+      "wet_skill": 80,
+      "consistency": 77
+    }
+  },
+  {
+    "name": "Carlos Sainz",
+    "number": 55,
+    "team": "Atlassian Williams F1 Team",
+    "country": "ES",
+    "image": "/images/drivers/carlos-sainz.webp",
+    "points": 7,
+    "rating": {
+      "pace": 91,
+      "racecraft": 93,
+      "aggression": 83,
+      "coldblood": 92,
+      "media_skill": 90,
+      "qualifying": 89,
+      "tyre_management": 92,
+      "wet_skill": 88,
+      "consistency": 91
+    }
+  },
+  {
+    "name": "Alex Albon",
+    "number": 23,
+    "team": "Atlassian Williams F1 Team",
+    "country": "TH",
+    "image": "/images/drivers/alex-albon.webp",
+    "points": 4,
+    "rating": {
+      "pace": 88,
+      "racecraft": 88,
+      "aggression": 83,
+      "coldblood": 87,
+      "media_skill": 88,
+      "qualifying": 89,
+      "tyre_management": 87,
+      "wet_skill": 85,
+      "consistency": 88
+    }
+  }
+]

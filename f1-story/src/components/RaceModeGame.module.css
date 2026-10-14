@@ -1,0 +1,496 @@
+/* ─── RACE MODE GAME CSS ───────────────────────────────────── */
+
+.container {
+  min-height: 100vh;
+  background: #090a0f;
+  color: #ffffff;
+  font-family: var(--font-inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  padding: 2.5rem 1.5rem 5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header / Track Banner */
+.headerCard {
+  background: linear-gradient(135deg, rgba(20, 24, 35, 0.9) 0%, rgba(12, 14, 22, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.headerCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #e10600, #ff5500);
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.seasonBadge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff3333;
+  background: rgba(255, 51, 51, 0.12);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 51, 51, 0.3);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.trackTitle {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(180deg, #ffffff 0%, #b0b0c0 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trackSub {
+  color: #8a8f9e;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+}
+
+.circuitBadges {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #d0d5e0;
+}
+
+.chip strong {
+  color: #00e676;
+}
+
+/* User Driver Spotlight Card */
+.spotlightCard {
+  background: linear-gradient(135deg, rgba(0, 230, 118, 0.06) 0%, rgba(20, 30, 45, 0.9) 100%);
+  border: 2px solid rgba(0, 230, 118, 0.35);
+  box-shadow: 0 0 30px rgba(0, 230, 118, 0.15);
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .spotlightCard {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+}
+
+.spotlightAvatarWrapper {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--team-color, #00e676);
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background: #151824;
+}
+
+.spotlightImg {
+  object-fit: cover;
+}
+
+.spotlightLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #00e676;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.spotlightName {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.spotlightTeam {
+  font-size: 0.9rem;
+  color: #a0a5b5;
+  margin-top: 0.2rem;
+}
+
+.spotlightStats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.statBox {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statVal {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.statValGreen {
+  color: #00e676;
+}
+
+.statValGold {
+  color: #ffd700;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  color: #7a8092;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* Section Header */
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.liveBadge {
+  background: rgba(225, 6, 0, 0.15);
+  border: 1px solid rgba(225, 6, 0, 0.4);
+  color: #ff3333;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Podium Grid */
+.podiumContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 1.25rem;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .podiumContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.podiumCard {
+  background: rgba(18, 22, 34, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.podiumCard:hover {
+  transform: translateY(-5px);
+}
+
+.goldPodium {
+  border-color: rgba(255, 215, 0, 0.5);
+  background: linear-gradient(180deg, rgba(255, 215, 0, 0.12) 0%, rgba(18, 22, 34, 0.95) 100%);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.15);
+}
+
+.silverPodium {
+  border-color: rgba(192, 192, 192, 0.4);
+  background: linear-gradient(180deg, rgba(192, 192, 192, 0.1) 0%, rgba(18, 22, 34, 0.95) 100%);
+}
+
+.bronzePodium {
+  border-color: rgba(205, 127, 50, 0.4);
+  background: linear-gradient(180deg, rgba(205, 127, 50, 0.1) 0%, rgba(18, 22, 34, 0.95) 100%);
+}
+
+.winnerCrown {
+  background: #ffd700;
+  color: #000;
+  font-weight: 900;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.podiumBadge {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  opacity: 0.7;
+}
+
+.podiumAvatar {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: #111;
+}
+
+.goldPodium .podiumAvatar {
+  width: 105px;
+  height: 105px;
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.podiumDriverImg {
+  object-fit: cover;
+}
+
+.podiumDriverName {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 0.25rem 0;
+}
+
+.podiumTeamRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #9095a5;
+  margin-bottom: 0.75rem;
+}
+
+.ptsBadge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #00e676;
+}
+
+.goldPts {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: #ffd700;
+  color: #ffd700;
+}
+
+/* Full Grid List */
+.gridList {
+  background: rgba(14, 17, 26, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.gridListHeader {
+  display: grid;
+  grid-template-columns: 70px 1fr 110px;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #656b7c;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gridRow {
+  display: grid;
+  grid-template-columns: 70px 1fr 110px;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.2s ease;
+}
+
+.gridRow:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.userDriverRow {
+  background: rgba(0, 230, 118, 0.08) !important;
+  border-left: 4px solid #00e676;
+}
+
+.userDriverRow:hover {
+  background: rgba(0, 230, 118, 0.12) !important;
+}
+
+.posBadge {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #8a8f9e;
+}
+
+.pos1 { color: #ffd700; font-size: 1.1rem; }
+.pos2 { color: #c0c0c0; font-size: 1.05rem; }
+.pos3 { color: #cd7f32; font-size: 1.05rem; }
+
+.driverCell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatarMini {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #1a1d28;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.rowImg {
+  object-fit: cover;
+}
+
+.driverInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.driverNameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.driverName {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.userTag {
+  background: #00e676;
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.teamName {
+  font-size: 0.8rem;
+  color: #727888;
+  margin-top: 2px;
+}
+
+.ptsCell {
+  text-align: right;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.f1PtsBadge {
+  color: #00e676;
+  background: rgba(0, 230, 118, 0.1);
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 230, 118, 0.2);
+}
+
+.noPts {
+  color: #4a4f5d;
+}
+
+/* Action Buttons */
+.actionRow {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #00e676 0%, #00b0ff 100%);
+  color: #000;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 230, 118, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 230, 118, 0.45);
+}
+
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
