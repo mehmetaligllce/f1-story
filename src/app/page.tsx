@@ -6,6 +6,7 @@ import { useGameStore } from "../store/gameStore";
 import locations from "../db/locations.json";
 import news from "../db/news.json";
 import styles from "./page.module.css";
+import ModeGuard from "../components/ModeGuard";
 
 interface NewsItem {
   id: number;
@@ -102,11 +103,13 @@ export default function Home() {
                 ⚡ Sezonu Otomatik Simüle Et
               </button>
             </Link>
-            <Link href="/race" style={{ width: '100%' }}>
-              <button className={styles.ctaButton} style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)' }}>
-                🏁 Tekli Yarışa Git
-              </button>
-            </Link>
+            <ModeGuard requiredMode={1}>
+              <Link href="/race" style={{ width: '100%' }}>
+                <button className={styles.ctaButton} style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  🏁 Tekli Yarışa Git
+                </button>
+              </Link>
+            </ModeGuard>
             <button
               onClick={handleReset}
               style={{

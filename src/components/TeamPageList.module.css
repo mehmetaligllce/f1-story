@@ -1,0 +1,376 @@
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    color: #ffffff;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* ── HEADER ── */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1f1f27 0%, #111115 100%);
+    border-radius: 20px;
+    padding: 2rem 3rem;
+    border-left: 6px solid #e10600;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.5rem;
+    border-top: 1px solid #2a2a35;
+    border-right: 1px solid #2a2a35;
+    border-bottom: 1px solid #2a2a35;
+    gap: 1.5rem;
+}
+
+.teamInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.numberWrapper {
+    background: #e10600;
+    padding: 10px 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.number {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.nameWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #a0a0b0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+.imageWrapper {
+    width: 180px;
+    height: 100px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* ── QUICK STATS ── */
+.quickStats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.quickStat {
+    background: #15151e;
+    border: 1px solid #2a2a35;
+    border-radius: 14px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.quickStat:hover {
+    transform: translateY(-4px);
+    border-color: #e10600;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.quickStatValue {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.quickStatLabel {
+    font-size: 0.72rem;
+    color: #6b6b7e;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ── SECTION TITLE ── */
+.sectionTitle {
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0 0 1.2rem 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #e10600;
+    display: inline-block;
+}
+
+.sectionTitle span {
+    color: #e10600;
+}
+
+/* ── RATINGS ── */
+.ratingsSection {
+    background: #15151e;
+    border: 1px solid #2a2a35;
+    border-radius: 16px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.ratingGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ratingItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+}
+
+.ratingIcon {
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.ratingLabel {
+    width: 155px;
+    font-weight: 600;
+    color: #d0d0e0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    flex-shrink: 0;
+}
+
+.barTrack {
+    flex: 1;
+    height: 10px;
+    background: #2a2a35;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.ratingValue {
+    width: 40px;
+    text-align: right;
+    font-weight: 900;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* ── TEAM DRIVERS SECTION ── */
+.driversSection {
+    background: #15151e;
+    border: 1px solid #2a2a35;
+    border-radius: 16px;
+    padding: 1.8rem 2rem;
+}
+
+.driversList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+}
+
+.driverCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a24;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border-left: 4px solid #e10600;
+    border-top: 1px solid #2a2a35;
+    border-right: 1px solid #2a2a35;
+    border-bottom: 1px solid #2a2a35;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+.driverCard:hover {
+    background: #22222e;
+    transform: translateX(4px);
+    border-left-color: #ffd700;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.driverLeft {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.driverNumberBadge {
+    background: #e10600;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 900;
+    padding: 4px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+.driverPhotoWrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #252532;
+    border: 2px solid #2a2a35;
+    flex-shrink: 0;
+}
+
+.driverPhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.driverMeta {
+    display: flex;
+    flex-direction: column;
+}
+
+.driverNameRow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.driverName {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e1e1e1;
+    letter-spacing: 0.3px;
+}
+
+.driverPoints {
+    font-size: 0.78rem;
+    color: #6b6b7e;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.arrowIcon {
+    font-size: 1.2rem;
+    color: #6b6b7e;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.driverCard:hover .arrowIcon {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+.emptyMessage {
+    color: #6b6b7e;
+    font-weight: 600;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.notFound {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .header {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 1.5rem;
+        gap: 1.2rem;
+    }
+
+    .teamInfo {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .name {
+        font-size: 1.6rem;
+    }
+
+    .imageWrapper {
+        width: 140px;
+        height: 70px;
+    }
+
+    .quickStats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quickStatValue {
+        font-size: 2rem;
+    }
+
+    .ratingLabel {
+        width: 120px;
+        font-size: 0.8rem;
+    }
+
+    .ratingsSection,
+    .driversSection {
+        padding: 1.2rem;
+    }
+}

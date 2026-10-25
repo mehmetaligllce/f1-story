@@ -1,3 +1,4 @@
+import ModeGuard from "@/src/components/ModeGuard";
 import { RaceDecisionScreen } from "@/src/components/RaceDecisionScreen";
 
 export const metadata = {
@@ -6,5 +7,10 @@ export const metadata = {
 };
 
 export default function DynamicRaceModePage() {
-  return <RaceDecisionScreen />;
+  return(
+  <ModeGuard requiredMode={1}>
+    <RaceDecisionScreen />
+  </ModeGuard>
+  )
+
 }

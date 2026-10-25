@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import { generateContent } from '../../../lib/gemini';
 
-// GET request for easy testing directly in the browser
 export async function GET() {
   try {
     const testPrompt = "Formula 1 spikeri tarzında kısa, heyecanlı bir sezon açılış anonsu yazar mısın?";
@@ -23,7 +22,6 @@ export async function GET() {
   }
 }
 
-// POST request for custom prompts from client components or other services
 export async function POST(request: Request) {
   try {
     const body = await request.json();

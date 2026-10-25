@@ -8,7 +8,10 @@ import { UpdateDriverRatings } from '../hooks/ratingUpdater';
 import locations from '../db/locations.json'
 import type { deltaStats } from '../types/deltaStats';
 
+// -1 not selected , 0 normal , 1 game mode
+
 type GameStore = {
+  mode:-1|0|1
   season: number
   round: number
   drivers: Driver[]
@@ -22,6 +25,7 @@ type GameStore = {
 export const useGameStore = create<GameStore>()(
   persist(
     (set) => ({
+      mode:-1,
       season: 2026,
       round: 1,
       drivers: initialDrivers,
@@ -122,7 +126,9 @@ export const useGameStore = create<GameStore>()(
 
           };
         });
-      }
+      },
+
+      setMode: (mode: -1 | 0 | 1) => set({ mode }),
     }),
     {
       name: 'f1-story-storage', 
