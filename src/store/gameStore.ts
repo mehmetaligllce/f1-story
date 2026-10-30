@@ -20,6 +20,7 @@ type GameStore = {
   addRaceResult: (results: string[]) => void
   nextSeason: () => void
   resetGame: () => void
+  setMode: (mode: -1 | 0 | 1) => void
 }
 
 export const useGameStore = create<GameStore>()(

@@ -44,7 +44,6 @@ export default function DriverSelectScreen() {
 
   return (
     <div className={styles.page}>
-      {/* ── HERO ── */}
       <div className={styles.hero}>
         <div className={styles.heroGlow} />
         <p className={styles.heroSub}>{season} Sezonu · Hikaye Modu</p>
@@ -55,7 +54,6 @@ export default function DriverSelectScreen() {
         </p>
       </div>
 
-      {/* ── GRID ── */}
       <div className={styles.gridWrapper}>
         <div className={styles.grid}>
           {sorted.map(driver => {
@@ -74,13 +72,10 @@ export default function DriverSelectScreen() {
                 } as React.CSSProperties}
                 onClick={() => setSelected(isSelected ? null : driver)}
               >
-                {/* Number watermark */}
                 <span className={styles.cardNumber}>#{driver.number}</span>
 
-                {/* Selected tick */}
                 {isSelected && <span className={styles.tick}>✓</span>}
 
-                {/* Photo */}
                 <div className={styles.photoWrapper}>
                   <Image
                     src={driver.image}
@@ -91,7 +86,6 @@ export default function DriverSelectScreen() {
                   />
                 </div>
 
-                {/* Info */}
                 <div className={styles.cardInfo}>
                   <div className={styles.driverName}>{driver.name}</div>
                   <div className={styles.teamName} style={{ color }}>
@@ -111,7 +105,6 @@ export default function DriverSelectScreen() {
         </div>
       </div>
 
-      {/* ── STICKY FOOTER ── */}
       <div className={`${styles.footer} ${selected ? styles.footerVisible : ""}`}>
         {selected && (
           <>

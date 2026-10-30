@@ -48,7 +48,6 @@ export default function RaceModeGame({ driverNumber, customResults }: RaceModeGa
   const storeDrivers = useGameStore((state) => state.drivers);
   const storeTeams = useGameStore((state) => state.teams);
 
-  // Track location for active round
   const track = useMemo(() => {
     return (
       locations.find((l) => l.round === round) ||
@@ -57,26 +56,22 @@ export default function RaceModeGame({ driverNumber, customResults }: RaceModeGa
     );
   }, [round]);
 
-  // Selected User Driver
   const numParsed = driverNumber ? Number(driverNumber) : null;
   const userDriver = useMemo(() => {
     if (!numParsed) return storeDrivers[0] || null;
     return storeDrivers.find((d) => d.number === numParsed) || storeDrivers[0] || null;
   }, [numParsed, storeDrivers]);
 
-  // Active race result array (from customResults prop OR simulated algorithm)
   const [raceResults, setRaceResults] = useState<RaceResultEntry[]>(() => {
     if (customResults && customResults.length > 0) return customResults;
     return simulateRace(storeDrivers, storeTeams, track);
   });
 
-  // Re-simulate handler
   const handleReSimulate = () => {
     const freshResults = simulateRace(storeDrivers, storeTeams, track);
     setRaceResults(freshResults);
   };
 
-  // User driver position in the results array
   const userResult = raceResults.find((r) => r.name === userDriver?.name);
   const userPos = userResult ? userResult.position : null;
   const userPts = userPos ? getF1Points(userPos) : 0;
@@ -88,7 +83,6 @@ export default function RaceModeGame({ driverNumber, customResults }: RaceModeGa
 
   return (
     <div className={styles.container}>
-      {/* ── TRACK HEADER ── */}
       <div className={styles.headerCard}>
         <div className={styles.headerTop}>
           <div>
@@ -104,7 +98,6 @@ export default function RaceModeGame({ driverNumber, customResults }: RaceModeGa
         </div>
       </div>
 
-      {/* ── USER DRIVER SPOTLIGHT ── */}
       {userDriver && (
         <div
           className={styles.spotlightCard}
@@ -148,14 +141,12 @@ export default function RaceModeGame({ driverNumber, customResults }: RaceModeGa
         </div>
       )}
 
-      {/* ── PODIUM SECTION ── */}
       <div className={styles.sectionTitle}>
         <span>🏆 YARIŞ PODİUMU</span>
         <span className={styles.liveBadge}>RESMİ SONUÇLAR</span>
       </div>
 
       <div className={styles.podiumContainer}>
-        {/* P2 - Silver */}
         {p2 && (() => {
           const d = storeDrivers.find((driver) => driver.name === p2.name);
           const t = storeTeams.find((team) => team.name === d?.team);
@@ -175,7 +166,6 @@ export default function RaceModeGame({ driverNumber, customResults }: RaceModeGa
           );
         })()}
 
-        {/* P1 - Gold */}
         {p1 && (() => {
           const d = storeDrivers.find((driver) => driver.name === p1.name);
           const t = storeTeams.find((team) => team.name === d?.team);
@@ -196,7 +186,6 @@ export default function RaceModeGame({ driverNumber, customResults }: RaceModeGa
           );
         })()}
 
-        {/* P3 - Bronze */}
         {p3 && (() => {
           const d = storeDrivers.find((driver) => driver.name === p3.name);
           const t = storeTeams.find((team) => team.name === d?.team);
@@ -217,7 +206,6 @@ export default function RaceModeGame({ driverNumber, customResults }: RaceModeGa
         })()}
       </div>
 
-      {/* ── FULL CLASSIFICATION LIST ── */}
       <div className={styles.sectionTitle}>
         <span>📋 TÜM SÜRÜCÜ SİLMANI (P1 - P{raceResults.length})</span>
       </div>
@@ -276,7 +264,6 @@ export default function RaceModeGame({ driverNumber, customResults }: RaceModeGa
         })}
       </div>
 
-      {/* ── ACTION BUTTONS ── */}
       <div className={styles.actionRow}>
         <button className={styles.btnPrimary} onClick={() => router.push("/race-mode")}>
           🏎️ Başka Sürücü Seç

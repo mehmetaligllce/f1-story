@@ -53,14 +53,12 @@ export const SeasonSimulator = () => {
   const [ratingNotice, setRatingNotice] = useState<string | null>(null);
   const ratingNoticeTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const totalRounds = locations.length; // 22 rounds
+  const totalRounds = locations.length;
   const isSeasonEnded = round > totalRounds;
 
-  // Sorting drivers & teams for live leaderboard view
   const sortedDrivers = [...drivers].sort((a, b) => (b.points || 0) - (a.points || 0));
   const sortedTeams = [...teams].sort((a, b) => (b.points || 0) - (a.points || 0));
 
-  // Find winner driver object helper
   const getDriverObj = React.useCallback((name: string): Driver | undefined => {
     return drivers.find(d => d.name === name);
   }, [drivers]);
@@ -72,13 +70,9 @@ export const SeasonSimulator = () => {
     const results = simulateRace(drivers, teams, currentLoc as Location);
     const driverNamesOrder = results.map(r => r.name);
 
-    // Get winner info for history
     const winnerDriver = getDriverObj(results[0].name);
-
-    // Save race result to store
     addRaceResult(driverNamesOrder);
 
-    // Update local state for visual presentation
     setLastRace({
       location: currentLoc,
       results
@@ -96,7 +90,6 @@ export const SeasonSimulator = () => {
       ...prev
     ]);
 
-    // Check if every 6th race passed
     if (currentLoc.round % 6 === 0) {
       setRatingNotice(`⚡ ${currentLoc.round}. Yarış tamamlandı! Sürücü ve takım form grafiği güncellendi.`);
       if (ratingNoticeTimerRef.current) clearTimeout(ratingNoticeTimerRef.current);
@@ -104,7 +97,6 @@ export const SeasonSimulator = () => {
     }
   }, [round, totalRounds, drivers, teams, addRaceResult, getDriverObj]);
 
-  // Timer loop for auto simulation
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null;
     let stopTimer: NodeJS.Timeout | null = null;
@@ -147,6 +139,7 @@ export const SeasonSimulator = () => {
       resetGame();
       setLastRace(null);
       setRaceHistory([]);
+      fetch('/api/generate-news', { method: 'DELETE' }).catch(() => {});
     }
   };
 
@@ -164,7 +157,6 @@ export const SeasonSimulator = () => {
 
   return (
     <div className={styles.simulatorContainer}>
-      {/* Header Banner */}
       <div className={styles.headerCard}>
         <div className={styles.headerLeft}>
           <span className={styles.seasonBadge}>{season} F1 DÜNYA ŞAMPİYONASI</span>
@@ -183,8 +175,6 @@ export const SeasonSimulator = () => {
           </div>
         </div>
       </div>
-
-      {/* Progress Bar */}
       <div className={styles.progressSection}>
         <div className={styles.progressBarWrapper}>
           <div className={styles.progressBarFill} style={{ width: `${progressPercent}%` }}></div>
@@ -195,7 +185,6 @@ export const SeasonSimulator = () => {
         </div>
       </div>
 
-      {/* Controls Bar */}
       <div className={styles.controlsBar}>
         <button
           onClick={handleToggleRun}
@@ -238,15 +227,11 @@ export const SeasonSimulator = () => {
           🔄 Sezonu Sıfırla
         </button>
       </div>
-
-      {/* Rating Notice Toast */}
       {ratingNotice && (
         <div className={styles.ratingToast}>
           {ratingNotice}
         </div>
       )}
-
-      {/* Season Champion Modal Banner */}
       {isSeasonEnded && sortedDrivers[0] && (
         <div className={styles.championCard}>
           <div className={styles.championBadge}>🏆 DÜNYA ŞAMPİYONU</div>
@@ -271,11 +256,8 @@ export const SeasonSimulator = () => {
           </button>
         </div>
       )}
-
-      {/* Main Grid Section: Winner Hero Display + Live Leaderboards */}
       <div className={styles.mainGrid}>
         
-        {/* Left Column: Last Race Winner Hero Display */}
         <div className={styles.raceHeroColumn}>
           {lastRace ? (
             <div className={styles.heroCard}>
@@ -302,8 +284,6 @@ export const SeasonSimulator = () => {
                   </div>
                 </div>
               </div>
-
-              {/* P1 WINNER SHOWCASE */}
               {winnerObj && (
                 <div className={styles.winnerSection}>
                   <div className={styles.winnerHeaderBadge}>
@@ -333,8 +313,6 @@ export const SeasonSimulator = () => {
                   </div>
                 </div>
               )}
-
-              {/* PODIUM (P2 & P3) */}
               <div className={styles.podiumRow}>
                 {p2Obj && (
                   <div className={styles.podiumCard}>
@@ -362,8 +340,6 @@ export const SeasonSimulator = () => {
                   </div>
                 )}
               </div>
-
-              {/* Top 10 Race Finishers Grid */}
               <div className={styles.finishersSection}>
                 <h4 className={styles.finishersTitle}>Yarış İlk 10 Derecesi</h4>
                 <div className={styles.finishersList}>
@@ -393,10 +369,8 @@ export const SeasonSimulator = () => {
           )}
         </div>
 
-        {/* Right Column: Dynamic Live Standings & Race History */}
         <div className={styles.sideColumn}>
 
-          {/* Drivers Standings */}
           <div className={styles.standingsCard}>
             <div className={styles.cardHeader}>
               <h3>🏆 Canlı Sürücüler Puan Durumu</h3>
@@ -422,7 +396,6 @@ export const SeasonSimulator = () => {
             </Link>
           </div>
 
-          {/* Teams Standings */}
           <div className={styles.standingsCard}>
             <div className={styles.cardHeader}>
               <h3>🏎️ Canlı Takımlar Puan Durumu</h3>
@@ -447,7 +420,6 @@ export const SeasonSimulator = () => {
             </Link>
           </div>
 
-          {/* Race History Log */}
           {raceHistory.length > 0 && (
             <div className={styles.historyCard}>
               <div className={styles.cardHeader}>

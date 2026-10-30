@@ -7,10 +7,6 @@ export interface Coordinates {
   pctY: number;
 }
 
-/**
- * 🛠️ Reusable Coordinate Tracker Hook
- * Calculates exact px and percentage (%) coordinates of mouse cursor over a container element.
- */
 export function useCoordinateTracker() {
   const [coords, setCoords] = useState<Coordinates>({ x: 0, y: 0, pctX: 0, pctY: 0 });
 

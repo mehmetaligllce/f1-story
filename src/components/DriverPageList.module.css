@@ -6,7 +6,6 @@
     font-family: 'Inter', -apple-system, sans-serif;
 }
 
-/* ── HEADER ── */
 .header {
     display: flex;
     justify-content: space-between;

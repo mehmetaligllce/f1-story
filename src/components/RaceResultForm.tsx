@@ -31,7 +31,6 @@ const RaceResultForm = () => {
   const storeTeams = useGameStore((state) => state.teams);
   const addRaceResult = useGameStore((state) => state.addRaceResult);
 
-  // Determine track/location for current round
   const currentLocation =
     locations.find((l) => l.round === round) ||
     locations[(round - 1) % locations.length] ||
@@ -43,13 +42,11 @@ const RaceResultForm = () => {
   const [manualResults, setManualResults] = useState<string[]>(Array(10).fill(''));
   const [showManual, setShowManual] = useState(false);
 
-  // Start simulation, calculate grid positions, and dispatch Gemini news request simultaneously
   const handleStartRace = async () => {
     setIsSimulating(true);
     setNewsStatus('generating');
 
     try {
-      // Fetch current fresh state from store
       const currentDrivers = useGameStore.getState().drivers;
       const currentTeams = useGameStore.getState().teams;
       const currentRoundNum = useGameStore.getState().round;
@@ -59,11 +56,9 @@ const RaceResultForm = () => {
         locations[(currentRoundNum - 1) % locations.length] ||
         locations[0];
 
-      // 1. Calculate race simulation results using user's simulator engine
       const results = simulateRace(currentDrivers, currentTeams, track);
       const trackName = `${track.name} (${track.country})`;
 
-      // 2. Dispatch news generation to Gemini API and WAIT for completion
       const res = await fetch('/api/generate-news', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -79,10 +74,8 @@ const RaceResultForm = () => {
         setNewsStatus('error');
       }
 
-      // 3. Save to Zustand store (increments round and updates driver standings)
       addRaceResult(results.map((r) => r.name));
 
-      // 4. Set race results state to display grid UI only after news is complete
       setRaceResults(results);
     } catch (err) {
       console.error("Gemini haber üretimi hatası:", err);
@@ -136,7 +129,6 @@ const RaceResultForm = () => {
 
   return (
     <div className={styles.container}>
-      {/* Track Header Card */}
       <div className={styles.trackCard}>
         <div className={styles.trackHeader}>
           <div>
@@ -151,7 +143,6 @@ const RaceResultForm = () => {
         </div>
       </div>
 
-      {/* Loading Card during simulation & news generation */}
       {isSimulating && (
         <div className={styles.loadingCard}>
           <div className={styles.loadingSpinner}></div>
@@ -160,7 +151,6 @@ const RaceResultForm = () => {
         </div>
       )}
 
-      {/* Primary Action Section: Yarışı Başlat Button */}
       {!raceResults && !isSimulating && (
         <div className={styles.actionCard}>
           <h2>Resmi Yarış Simülasyonu</h2>
@@ -175,7 +165,6 @@ const RaceResultForm = () => {
         </div>
       )}
 
-      {/* News Status Banner */}
       {raceResults && (
         <div className={`${styles.newsBanner} ${styles[newsStatus]}`}>
           {newsStatus === 'generating' && (
@@ -197,7 +186,6 @@ const RaceResultForm = () => {
         </div>
       )}
 
-      {/* Results View */}
       {raceResults && (
         <div className={styles.resultsSection}>
           <div className={styles.sectionHeader}>
@@ -205,9 +193,7 @@ const RaceResultForm = () => {
             <span className={styles.liveTag}>CANLI SONUÇLAR</span>
           </div>
 
-          {/* Podium Top 3 */}
           <div className={styles.podiumContainer}>
-            {/* P2 - Silver */}
             {p2 && (() => {
               const driver = storeDrivers.find((d) => d.name === p2.name);
               const team = storeTeams.find((t) => t.name === driver?.team);
@@ -239,7 +225,6 @@ const RaceResultForm = () => {
               );
             })()}
 
-            {/* P1 - Gold Winner */}
             {p1 && (() => {
               const driver = storeDrivers.find((d) => d.name === p1.name);
               const team = storeTeams.find((t) => t.name === driver?.team);
@@ -272,7 +257,6 @@ const RaceResultForm = () => {
               );
             })()}
 
-            {/* P3 - Bronze */}
             {p3 && (() => {
               const driver = storeDrivers.find((d) => d.name === p3.name);
               const team = storeTeams.find((t) => t.name === driver?.team);
@@ -305,7 +289,6 @@ const RaceResultForm = () => {
             })()}
           </div>
 
-          {/* Full Grid Positions List (P1 to P22) */}
           <div className={styles.gridList}>
             <div className={styles.gridListHeader}>
               <span>POS</span>
@@ -361,7 +344,6 @@ const RaceResultForm = () => {
             })}
           </div>
 
-          {/* Bottom Actions */}
           <div className={styles.bottomActions}>
             <button className={styles.primaryNavBtn} onClick={() => router.push('/')}>
               🏠 Ana Sayfaya Dön (Haberleri Oku)
@@ -370,7 +352,6 @@ const RaceResultForm = () => {
         </div>
       )}
 
-      {/* Secondary Manual Entry Toggle */}
       {!raceResults && (
         <div className={styles.manualToggleContainer}>
           <button

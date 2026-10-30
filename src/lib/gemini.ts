@@ -10,7 +10,7 @@ export const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
 
 export async function generateContent(
   prompt: string,
-  modelName: string = 'gemini-2.5-flash',
+  modelName: string = 'gemini-3.5-flash-lite',
   maxRetries: number = 3
 ): Promise<string> {
   if (!genAI) {
@@ -26,9 +26,8 @@ export async function generateContent(
     } catch (error: any) {
       const is503 = error?.status === 503 || error?.message?.includes('503');
 
-      // Sadece 503 ve kalan deneme hakkı varsa bekle ve tekrar dene
       if (is503 && attempt < maxRetries) {
-        const waitTime = attempt * 2000; // 2s, 4s...
+        const waitTime = attempt * 2000;
         console.warn(`Gemini 503 yoğunluk hatası verdi. ${waitTime}ms sonra tekrar deneniyor (${attempt}/${maxRetries})...`);
         await new Promise((res) => setTimeout(res, waitTime));
         continue;

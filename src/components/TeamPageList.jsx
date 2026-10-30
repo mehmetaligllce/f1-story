@@ -46,12 +46,10 @@ const TeamPageList = () => {
     );
   }
 
-  // Sıralamayı puan durumuna göre hesapla
   const sortedTeams = [...teams].sort((a, b) => (b.points || 0) - (a.points || 0));
   const standingIndex = sortedTeams.findIndex((t) => t.name === team.name);
   const standing = standingIndex !== -1 ? standingIndex + 1 : null;
 
-  // Takıma ait sürücüler ve istatistikleri
   const teamDrivers = drivers.filter((d) => d.team === team.name);
   const allStandings = teamDrivers.flatMap((d) => d.standings || []);
   const wins = allStandings.filter((s) => s.position === 1).length;
@@ -59,7 +57,6 @@ const TeamPageList = () => {
 
   return (
     <div className={styles.container}>
-      {/* Header Card */}
       <div className={styles.header}>
         <div className={styles.teamInfo}>
           <div className={styles.numberWrapper}>
@@ -84,7 +81,6 @@ const TeamPageList = () => {
         )}
       </div>
 
-      {/* Quick Stats Grid */}
       <div className={styles.quickStats}>
         <div className={styles.quickStat}>
           <span className={styles.quickStatValue} style={{ color: "#e10600" }}>
@@ -124,7 +120,6 @@ const TeamPageList = () => {
         </div>
       </div>
 
-      {/* Ratings Section */}
       <div className={styles.ratingsSection}>
         <h2 className={styles.sectionTitle}>
           Takım Reyting <span>Profili</span>
@@ -156,7 +151,6 @@ const TeamPageList = () => {
         </div>
       </div>
 
-      {/* Team Drivers Section */}
       <div className={styles.driversSection}>
         <h2 className={styles.sectionTitle}>
           Takım <span>Sürücüleri</span>

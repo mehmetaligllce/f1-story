@@ -6,9 +6,10 @@ export interface RaceEvent {
     options: RaceOption[];
 }
 
-interface RaceOption {
+export interface RaceOption {
     id: string;
     icon: string;
     label: string;
     description: string;
+    impact?: number
 }

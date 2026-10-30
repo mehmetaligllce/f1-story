@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import ReactCountryFlag from "react-country-flag";
 import { useGameStore } from "../store/gameStore";
@@ -31,14 +32,33 @@ const getWeatherIcon = (weather: string) => {
 export default function Home() {
   const { round, drivers, teams, season, resetGame } = useGameStore();
 
+  const [newsList, setNewsList] = useState<NewsItem[]>(typedNews);
+
+  useEffect(() => {
+    fetch('/api/generate-news', { cache: 'no-store' })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.news && Array.isArray(data.news) && data.news.length > 0) {
+          setNewsList(data.news.slice(0, 3));
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   const currentTrack = locations.find((l) => l.round === round) || locations[locations.length - 1];
 
   const topDrivers = [...drivers].sort((a, b) => b.points - a.points).slice(0, 3);
   const topTeams = [...teams].sort((a, b) => b.points - a.points).slice(0, 3);
 
-  const handleReset = () => {
+  const handleReset = async () => {
     if (window.confirm('Şampiyonaları ve puan tablosunu sıfırlamak istediğine emin misin? Bu işlem geri alınamaz.')) {
       resetGame();
+      try {
+        await fetch('/api/generate-news', { method: 'DELETE' });
+        setNewsList([]);
+      } catch (err) {
+        console.error("Haberleri sıfırlama hatası:", err);
+      }
     }
   };
 
@@ -103,10 +123,17 @@ export default function Home() {
                 ⚡ Sezonu Otomatik Simüle Et
               </button>
             </Link>
-            <ModeGuard requiredMode={1}>
+            <ModeGuard requiredMode={0}>
               <Link href="/race" style={{ width: '100%' }}>
                 <button className={styles.ctaButton} style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)' }}>
                   🏁 Tekli Yarışa Git
+                </button>
+              </Link>
+            </ModeGuard>
+            <ModeGuard requiredMode={1}>
+              <Link href="/race-mode" style={{ width: '100%' }}>
+                <button className={styles.ctaButton} style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  🏁 Kariyer Moduna Geç
                 </button>
               </Link>
             </ModeGuard>
@@ -136,7 +163,7 @@ export default function Home() {
             </div>
             
             <div className={styles.newsFeed}>
-              {typedNews.map((item) => (
+              {newsList.map((item) => (
                 <div key={item.id} className={styles.newsCard}>
                   <div className={styles.newsHeader}>
                     <span className={styles.badge} style={{ fontSize: '0.65rem' }}>{item.category}</span>

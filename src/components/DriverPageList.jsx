@@ -59,7 +59,6 @@ const DriverPageList = () => {
     );
   }
 
-  // Sort standings: newest first (highest round number first within same season)
   const sortedStandings = [...(driver.standings || [])].reverse();
 
   // Stats
@@ -69,7 +68,6 @@ const DriverPageList = () => {
 
   return (
     <div className={styles.container}>
-      {/* Header Card */}
       <div className={styles.header}>
         <div className={styles.driverInfo}>
           <div className={styles.numberWrapper}>
@@ -86,7 +84,6 @@ const DriverPageList = () => {
         </div>
       </div>
 
-      {/* Quick Stats Row */}
       <div className={styles.quickStats}>
         <div className={styles.quickStat}>
           <span className={styles.quickStatValue} style={{ color: "#e10600" }}>{driver.points}</span>
@@ -142,7 +139,6 @@ const DriverPageList = () => {
         </div>
       </div>
 
-      {/* Race History */}
       <div className={styles.historySection}>
         <h2 className={styles.sectionTitle}>Yarış <span>Geçmişi</span></h2>
         {sortedStandings.length ? (

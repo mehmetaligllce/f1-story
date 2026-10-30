@@ -1,23 +1,78 @@
-"use client"
-import {useRouter} from "next/navigation"
-import { useGameStore } from "../store/gameStore"
+"use client";
 
-
+import { useRouter } from "next/navigation";
+import { useGameStore } from "../store/gameStore";
+import styles from "./ModeSelectPage.module.css";
 
 const ModeSelectPage = () => {
-    const router=useRouter()
-    const mode=useGameStore((state)=>state.mode)
-    const setMode=useGameStore((state)=>state.setMode)
+  const router = useRouter();
+  const mode = useGameStore((state) => state.mode);
+  const setMode = useGameStore((state) => state.setMode);
 
-    
+  const handleSelect = (selectedMode) => {
+    setMode(selectedMode);
+    router.push("/");
+  };
 
-    return (
-        <div>
-            <h1>Mode Select Page</h1>
-            <button onClick={()=>{setMode(0);router.push('/')}} style={{color:mode==0?'green':'white'}}>Normal Mode</button>
-            <button onClick={()=>{setMode(1);router.push('/')}} style={{color:mode==1?'green':'white'}}>Game Mode</button>
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>
+          Oyun Modunu <span>Seçin</span>
+        </h1>
+      </div>
+
+      <div className={styles.grid}>
+        <div
+          className={`${styles.card} ${mode === 0 ? styles.cardActive : ""}`}
+          onClick={() => handleSelect(0)}
+        >
+          <div className={styles.cardContent}>
+            <div className={styles.cardTop}>
+              <div className={styles.iconWrapper}>🔘</div>
+            </div>
+            <h2 className={styles.cardTitle}>Normal Mod</h2>
+          </div>
+
+          <button
+            className={`${styles.actionButton} ${
+              mode === 0 ? styles.buttonActive : styles.buttonDefault
+            }`}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleSelect(0);
+            }}
+          >
+            {mode === 0 ? "✓ Seçili" : "Seç"}
+          </button>
         </div>
-    )
-}
 
-export default ModeSelectPage
+        <div
+          className={`${styles.card} ${mode === 1 ? styles.cardActive : ""}`}
+          onClick={() => handleSelect(1)}
+        >
+          <div className={styles.cardContent}>
+            <div className={styles.cardTop}>
+              <div className={styles.iconWrapper}>🎮</div>
+            </div>
+            <h2 className={styles.cardTitle}>Oyun Modu</h2>
+          </div>
+
+          <button
+            className={`${styles.actionButton} ${
+              mode === 1 ? styles.buttonActive : styles.buttonDefault
+            }`}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleSelect(1);
+            }}
+          >
+            {mode === 1 ? "✓ Seçili" : "Seç"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ModeSelectPage;

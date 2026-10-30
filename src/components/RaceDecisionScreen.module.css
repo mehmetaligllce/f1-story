@@ -165,3 +165,520 @@
   user-select: none;
   line-height: 1.6;
 }
+
+/* 🏁 Sonuç Ekranı Overlay & Card */
+.resultOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 7, 10, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 100;
+  padding: 1.5rem;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.resultCard {
+  max-width: 520px;
+  width: 100%;
+  background: linear-gradient(145deg, rgba(25, 28, 38, 0.95), rgba(14, 16, 24, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2.2rem;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(225, 6, 0, 0.2);
+}
+
+.flagIcon {
+  font-size: 2.8rem;
+  margin-bottom: 0.3rem;
+  animation: bounce 1s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+.resultTitle {
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.2rem;
+}
+
+.resultTrackName {
+  font-size: 1rem;
+  color: #a0a5b5;
+  margin-bottom: 1.5rem;
+}
+
+.driverHighlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 0.8rem 1.4rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.driverAvatarWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: #11141c;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.driverImg {
+  object-fit: cover;
+}
+
+.driverResultName {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.teamResultBadge {
+  font-size: 0.85rem;
+  color: #00d2be;
+  font-weight: 600;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.statBox {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 0.8rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #8a90a2;
+  text-transform: uppercase;
+}
+
+.statValue {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.statValue.pos1 {
+  color: #ffd700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.statValue.pos2 {
+  color: #c0c0c0;
+  text-shadow: 0 0 12px rgba(192, 192, 192, 0.5);
+}
+
+.statValue.pos3 {
+  color: #cd7f32;
+  text-shadow: 0 0 12px rgba(205, 127, 50, 0.5);
+}
+
+.pointsValue {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #00e676;
+  text-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
+}
+
+.impactValue {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.resultActions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  flex: 1 1 100%;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, #e10600, #b00000);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(225, 6, 0, 0.6);
+  filter: brightness(1.1);
+}
+
+.secondaryBtn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #e0e5f0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* 🏁 Yarış Öncesi Brifing & Sıralama Ekranı */
+.briefingOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(4, 6, 12, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.briefingContainer {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.briefingHeader {
+  text-align: center;
+}
+
+.briefingSubtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #e10600;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.briefingTitle {
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.briefingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.briefingCard {
+  background: linear-gradient(145deg, rgba(20, 24, 34, 0.85), rgba(12, 14, 22, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.briefingCardTitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #8a92a6;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.6rem;
+}
+
+/* Sürücü Kartı */
+.briefingDriverContent {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.briefingAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: #11141c;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.briefingDriverInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.briefingDriverNum {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #e10600;
+}
+
+.briefingDriverName {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.briefingTeamRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #a0a6b8;
+  margin-top: 0.2rem;
+}
+
+/* Sıralama & Grid Kartı */
+.qualiBadgeBig {
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15), transparent 70%);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.qualiGridLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffd700;
+  text-transform: uppercase;
+}
+
+.qualiGridPos {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  line-height: 1.1;
+  margin: 0.2rem 0;
+}
+
+.qualiScoreText {
+  font-size: 0.8rem;
+  color: #c4cad8;
+}
+
+.qualiMiniList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.qualiMiniRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #ccd2e3;
+}
+
+.qualiMiniRowActive {
+  background: rgba(0, 230, 118, 0.15);
+  border: 1px solid rgba(0, 230, 118, 0.4);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* Pist Kartı */
+.trackDetailList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.trackDetailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9da4b6;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.4rem;
+}
+
+.trackDetailRow strong {
+  color: #ffffff;
+}
+
+.briefingStartBtn {
+  width: 100%;
+  padding: 1.1rem;
+  background: linear-gradient(135deg, #e10600, #b00000);
+  border: none;
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(225, 6, 0, 0.5);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.briefingStartBtn:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 35px rgba(225, 6, 0, 0.7);
+  filter: brightness(1.1);
+}
+
+/* 📰 Gemini Haber Banner'ı (Sonuç Ekranında) */
+.newsBanner {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.newsBanner.generating {
+  background: rgba(255, 152, 0, 0.12);
+  border: 1px solid rgba(255, 152, 0, 0.3);
+  color: #ff9800;
+}
+
+.newsBanner.done {
+  background: rgba(0, 230, 118, 0.12);
+  border: 1px solid rgba(0, 230, 118, 0.35);
+  color: #00e676;
+}
+
+.newsBanner.error {
+  background: rgba(255, 82, 82, 0.12);
+  border: 1px solid rgba(255, 82, 82, 0.3);
+  color: #ff5252;
+}
+
+.newsStatusRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  background: #ff9800;
+  border-radius: 50%;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.4; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+.miniNewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.miniNewsItem {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+}
+
+.miniNewsCategory {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: rgba(225, 6, 0, 0.25);
+  color: #ff6b66;
+  border: 1px solid rgba(225, 6, 0, 0.4);
+  border-radius: 6px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+
+.miniNewsTitle {
+  color: #e2e8f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
