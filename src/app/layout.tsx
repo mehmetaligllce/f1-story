@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "F1 Story | Sezon & Kariyer Simülasyonu",
   description: "İnteraktif Formula 1 Kariyer ve Sezon Simülasyonu",
+  icons: "/logo.png",
 };
 
 export default function RootLayout({
